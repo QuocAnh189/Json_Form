@@ -37,6 +37,7 @@ const schema: RJSFSchema = {
             "type": "string",
             "title": "Gender",
             "enum": ["male", "female", "other"],
+            "enumNames": ["Select your school", "HCMUIT", "HCMUTE", "HCMUS"]
         },
         "school": {
             "type": "string",

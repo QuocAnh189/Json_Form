@@ -5,7 +5,7 @@ import { RJSFValidationError } from '@rjsf/utils';
 import validator from '@rjsf/validator-ajv8';
 
 //datajson
-import initialForm from '../data.json'
+import initialForm from '../data/data.json';
 
 //css
 import '../assets/css/form_mui.css'
