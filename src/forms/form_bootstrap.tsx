@@ -1,45 +1,45 @@
 //rjsf
-import { IChangeEvent, withTheme } from '@rjsf/core';
-import { Theme as BootstrapUITheme } from '@rjsf/bootstrap-4';
-import { RJSFValidationError } from '@rjsf/utils';
-import validator from '@rjsf/validator-ajv8';
+import { IChangeEvent, withTheme } from '@rjsf/core'
+import { Theme as BootstrapUITheme } from '@rjsf/bootstrap-4'
+import { RJSFValidationError } from '@rjsf/utils'
+import validator from '@rjsf/validator-ajv8'
 
 //datajson
-import initialForm from '../data.json'
+import initialForm from '../data/data.json'
 
 //css
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '../assets/css/form_bootstrap.css'
 
 //schema
-import schema from '../data/schema';
+import schema from '../data/schema'
 
 //widget
-import uiSchemaBootstrap from '../widgets/form_bootstrap';
+import uiSchemaBootstrap from '../widgets/form_bootstrap'
 
-const Form = withTheme(BootstrapUITheme);
+const Form = withTheme(BootstrapUITheme)
 
 const FormBootsrap = () => {
   const onChange = (data: IChangeEvent<any, any, any>, id?: string | undefined) => {
-    // console.log(data, id);
+    console.log(data, id)
   }
-  
-  const onSubmit = (data: IChangeEvent<any, any, any>, event: any) => {
-    console.log(data.formData);
+
+  const onSubmit = (data: IChangeEvent<any, any, any>) => {
+    console.log(data.formData)
   }
 
   const onError = (errors: RJSFValidationError[]) => {
-    console.log(errors);
+    console.log(errors)
   }
 
   return (
-    <div className="container">
+    <div className='container'>
       <h1 className='py-8 text-2xl'>Researh Form JSON (Bootstrap)</h1>
-        <Form
+      <Form
         className='form_container'
         formContext={{
-            descriptionLocation: 'tooltip',
-            readonlyAsDisabled: false,
+          descriptionLocation: 'tooltip',
+          readonlyAsDisabled: false
         }}
         schema={schema}
         uiSchema={uiSchemaBootstrap}
@@ -48,7 +48,7 @@ const FormBootsrap = () => {
         onChange={onChange}
         onSubmit={onSubmit}
         onError={onError}
-        />
+      />
     </div>
   )
 }
